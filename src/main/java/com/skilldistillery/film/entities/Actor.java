@@ -14,18 +14,16 @@ public class Actor {
 	public Actor() {
 		super();
 	}
-	public Actor(int id, String firstName, String lastName) {
+	public Actor(int id, String firstName, String lastName, List<Film> films) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.films = films;
 	}
-
-
 
 	public int getId() {
 		return id;
-
 	}
 
 	public void setId(int id) {
@@ -73,7 +71,7 @@ public class Actor {
 	
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
 	}
 
 	public List<Film> getFilms() {
