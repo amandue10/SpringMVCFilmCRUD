@@ -18,6 +18,9 @@ public class Film {
 	private String specialFeatures;
 	private List<Actor> cast;
 
+	public Film() {
+		super();
+	}
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
 			double rentalRate, int length, double replacementCost, String rating, String specialFeatures,
 			List<Actor> cast) {
@@ -34,40 +37,21 @@ public class Film {
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
 		this.cast = cast;
-		
 	}
 
-	public Film() {
-		super();
-	}
-
-	public Film(int int1, String string, String string2, int int2, int int3, int int4, int int5, double double1,
-			String string3, String string4, List<Actor> cast2, String string5) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Film(int int1, String string, String string2, int int2, int int3, int int4, int int5, double double1,
-			String string3, String string4) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public Film(String title2, short releaseYear2, String rating2, String desc, String lang) {
-		// TODO Auto-generated constructor stub
-	}
-
-	public List<Actor> getcast() {
+	public List<Actor> getCast() {
 		return cast;
 	}
 
-	public void setcast(List<Actor> cast) {
+	public void setCast(List<Actor> cast) {
 		this.cast = cast;
 	}
 
-	public int getid() {
+	public int getId() {
 		return id;
 	}
 
-	public void setid(int id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 
@@ -87,35 +71,35 @@ public class Film {
 		this.description = description;
 	}
 
-	public int getreleaseYear() {
+	public int getReleaseYear() {
 		return releaseYear;
 	}
 
-	public void setreleaseYear(int releaseYear) {
+	public void setReleaseYear(int releaseYear) {
 		this.releaseYear = releaseYear;
 	}
 
-	public int getlanguageId() {
+	public int getLanguageId() {
 		return languageId;
 	}
 
-	public void setlanguageId(int languageId) {
+	public void setLanguageId(int languageId) {
 		this.languageId = languageId;
 	}
 
-	public int getrentalDuration() {
+	public int getRentalDuration() {
 		return rentalDuration;
 	}
 
-	public void setrentalDuration(int rentalDuration) {
+	public void setRentalDuration(int rentalDuration) {
 		this.rentalDuration = rentalDuration;
 	}
 
-	public double getrentalRate() {
+	public double getRentalRate() {
 		return rentalRate;
 	}
 
-	public void setrentalRate(double rentalRate) {
+	public void setRentalRate(double rentalRate) {
 		this.rentalRate = rentalRate;
 	}
 
@@ -127,11 +111,11 @@ public class Film {
 		this.length = length;
 	}
 
-	public double getreplacementCost() {
+	public double getReplacementCost() {
 		return replacementCost;
 	}
 
-	public void setreplacementCost(double replacementCost) {
+	public void setReplacementCost(double replacementCost) {
 		this.replacementCost = replacementCost;
 	}
 
@@ -143,11 +127,11 @@ public class Film {
 		this.rating = rating;
 	}
 
-	public String getspecialFeatures() {
+	public String getSpecialFeatures() {
 		return specialFeatures;
 	}
 
-	public void setspecialFeatures(String specialFeatures) {
+	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
 

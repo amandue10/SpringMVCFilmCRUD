@@ -18,7 +18,6 @@ import com.skilldistillery.film.entities.Film;
 public class FilmController {
 	private Film filmForDisplay  = null;
 	
-	
 	@Autowired
 	private FilmDAO filmDao;
 	
@@ -63,16 +62,12 @@ public class FilmController {
 					mv.setViewName("WEB-INF/filmByID.jsp");
 				}
 			}
-			
-			else {
-				mv.addObject("noFilm", "Invalid Film, try Again!");
-				mv.setViewName("WEB-INF/filmByID.jsp");
-			}
 
 		}
 
 		return mv;
 	}
 		
-	}
-
+	
+	
+}
