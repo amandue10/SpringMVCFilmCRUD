@@ -36,6 +36,7 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
+		this.cast = cast;
 	}
 
 	public List<Actor> getCast() {

@@ -86,15 +86,33 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 	
 	@Override
 	public void addNewFilm(Film film) {
+//		private int id;
+//		private String title;
+//		private String description;
+//		private int releaseYear;
+//		private int languageId;
+//		private int rentalDuration;
+//		private double rentalRate;
+//		private int length;
+//		private double replacementCost;
+//		private String rating;
+//		private String specialFeatures;
 		
-		String mySql = "insert into film values()";
 		List<Actor> actors = new ArrayList<>();
 		Connection conn = null;
 		PreparedStatement pst = null;
 		ResultSet rs = null;
 		try {
 			conn = DriverManager.getConnection(URL, user, pass);
+			conn.setAutoCommit(false);
+			String mySql = "insert into film(id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features) "
+					+ "values(?,?,?,?,?,?,?,?,?,?,?)";
 			pst = conn.prepareStatement(mySql);
+			pst.setInt(1, film.getId());
+			pst.setString(2, film.getTitle());
+//			pst.setString(3, film.get());
+			pst.setInt(1, film.getId());
+			pst.setInt(1, film.getId());
 			rs = pst.executeQuery();
 
 			while (rs.next()) {
