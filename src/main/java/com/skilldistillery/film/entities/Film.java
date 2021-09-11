@@ -34,6 +34,7 @@ public class Film {
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
 		this.cast = cast;
+		
 	}
 
 	public Film() {
