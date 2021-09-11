@@ -11,5 +11,6 @@ public interface FilmDAO {
 	
 	List<Actor> findActorsByFilmId(int filmId);
 	
+	void addNewFilm(Film film);
 	
 }
