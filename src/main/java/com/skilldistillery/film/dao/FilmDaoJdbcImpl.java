@@ -7,6 +7,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
+
 import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
@@ -92,6 +94,55 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 		return actors;
 	}
 	
+	@Override
+	public void addNewFilm(Film film) {
+//		private int id;
+//		private String title;
+//		private String description;
+//		private int releaseYear;
+//		private int languageId;
+//		private int rentalDuration;
+//		private double rentalRate;
+//		private int length;
+//		private double replacementCost;
+//		private String rating;
+//		private String specialFeatures;
+		
+		List<Actor> actors = new ArrayList<>();
+		Connection conn = null;
+		PreparedStatement pst = null;
+		ResultSet rs = null;
+		try {
+			conn = DriverManager.getConnection(URL, user, pass);
+			conn.setAutoCommit(false);
+			String mySql = "insert into film(id,title,description,release_year,language_id,rental_duration,rental_rate,length,replacement_cost,rating,special_features) "
+					+ "values(?,?,?,?,?,?,?,?,?,?,?)";
+			pst = conn.prepareStatement(mySql);
+			pst.setInt(1, film.getId());
+			pst.setString(2, film.getTitle());
+//			pst.setString(3, film.get());
+			pst.setInt(1, film.getId());
+			pst.setInt(1, film.getId());
+			rs = pst.executeQuery();
+
+			while (rs.next()) {
+				Actor actor = new Actor();
+				actor.setId(rs.getInt(1));
+				actor.setFirstName(rs.getString(2));
+				actor.setFirstName(rs.getString(2));
+				actors.add(actor);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			closeResource(conn, pst, rs);
+		}
+	}
+	
+	
+	
+	
+	
 	private void closeResource(Connection conn, PreparedStatement pst, ResultSet rs) {
 		try {
 			if (rs != null) {
@@ -107,5 +158,6 @@ public class FilmDaoJdbcImpl implements FilmDAO {
 			e.printStackTrace();
 		}
 	}
+
 
 }
