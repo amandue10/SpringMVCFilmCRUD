@@ -16,27 +16,27 @@ import com.skilldistillery.film.entities.Film;
 
 @Controller
 public class FilmController {
-	private Film filmForDisplay  = null;
-	
+	private Film filmForDisplay = null;
+
 	@Autowired
 	private FilmDAO filmDao;
-	
-	
+
 	public void setFilmDAO(FilmDaoJdbcImpl filmdao) {
-		this.filmDao= filmdao;
+		this.filmDao = filmdao;
 	}
 
 	@RequestMapping(path = "home.do", method = RequestMethod.GET)
 	public ModelAndView index() {
 		ModelAndView mv = new ModelAndView();
 		mv.setViewName("WEB-INF/home.jsp");
-		
+
 		return mv;
-		
+
 	}
-	
-	@RequestMapping(path = "findFilmById.do", method = RequestMethod.GET, params = "id")
-	public ModelAndView findFilmByID(@RequestParam("id") String filmId) {
+
+	@RequestMapping(path = "filmById.do", method = RequestMethod.GET)
+	public ModelAndView findFilmById(@RequestParam("id") String filmId) {
+
 		ModelAndView mv = new ModelAndView();
 
 		Pattern p = Pattern.compile("^[0-9]");
@@ -50,16 +50,16 @@ public class FilmController {
 				Film film = filmDao.findById(id);
 
 				if (film != null) {
-					
-					filmForDisplay= film;
-					
+
+					filmForDisplay = film;
+
 					mv.addObject("film", film);
 					mv.setViewName("WEB-INF/result.jsp");
 				}
 
 				else {
 					mv.addObject("noFilm", "Invalid Film, try Again!");
-					mv.setViewName("WEB-INF/filmByID.jsp");
+					mv.setViewName("WEB-INF/filmById.jsp");
 				}
 			}
 
@@ -67,7 +67,5 @@ public class FilmController {
 
 		return mv;
 	}
-		
-	
-	
+
 }

@@ -11,9 +11,19 @@ import com.skilldistillery.film.entities.Actor;
 import com.skilldistillery.film.entities.Film;
 
 public class FilmDaoJdbcImpl implements FilmDAO {
-	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false";
+	private static final String URL = "jdbc:mysql://localhost:3306/sdvid?useSSL=false&useLegacyDatetimeCode=false&serverTimezone=US/Mountain";
 	private String user = "student";
 	private String pass = "student";
+	
+	public FilmDaoJdbcImpl() {
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
 	
 	@Override
 	public Film findById(int filmId) {
