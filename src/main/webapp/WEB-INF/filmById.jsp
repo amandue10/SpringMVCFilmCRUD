@@ -9,6 +9,7 @@
 	<ul class="main-nav" id="js-menu">
 		<li><a href="home.do" class="nav-links">Home</a></li>
 		<li><a href="filmById.do" class="nav-links">Film By ID</a></li>
+		<li><a href="addFilmForm.do" class="nav-links">Add Film</a></li>
 	</ul>
 </nav>
 <meta charset="UTF-8">

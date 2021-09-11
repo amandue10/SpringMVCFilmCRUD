@@ -3,6 +3,8 @@ package com.skilldistillery.film.controllers;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -65,6 +67,14 @@ public class FilmController {
 
 		}
 		return mv;
+	}
+	
+	@RequestMapping(path = "addFilm.do", method = RequestMethod.GET)
+	private ModelAndView getForm(@Valid Film film) {
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/WEB-INF/addFilm.jsp");
+		return mv;
+		
 	}
 	
 }
