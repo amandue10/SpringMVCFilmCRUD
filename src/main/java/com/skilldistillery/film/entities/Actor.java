@@ -1,25 +1,20 @@
 package com.skilldistillery.film.entities;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Objects;
 
 public class Actor {
-
 	private int id;
 	private String firstName;
 	private String lastName;
-	private List<Film> films = new ArrayList<>();
 	
 	public Actor() {
 		super();
 	}
-	public Actor(int id, String firstName, String lastName, List<Film> films) {
+	public Actor(int id, String firstName, String lastName) {
 		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;
-		this.films = films;
 	}
 
 	public int getId() {
@@ -51,12 +46,6 @@ public class Actor {
 		return Objects.hash(firstName, id, lastName);
 	}
 	
-	public Actor(String firstName, String lastName) {
-		super();
-		this.firstName = firstName;
-		this.lastName = lastName;
-	}
-	
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -71,12 +60,7 @@ public class Actor {
 	
 	@Override
 	public String toString() {
-		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", films=" + films + "]";
-	}
-
-	public List<Film> getFilms() {
-		List<Film> copy = new ArrayList<>(films);
-		return copy;
+		return "Actor [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + "]";
 	}
 
 }
