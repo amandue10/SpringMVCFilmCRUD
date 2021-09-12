@@ -18,12 +18,13 @@
 	<div class="header">
 	<h1>Film Menu</h1>
 	</div>
-	
+	<br>
 	<div>
 	<p>Welcome to the film site database. You can search the database by entering a film's ID or search by entering keywords. 
 	The details of the film will populate and you will have the option to edit, add, or delete a film from the database.
 	</p>
 	</div>
+	<br>
 	<div>
 	<form action="findById.do" method="GET">
 	<fieldset>
@@ -49,7 +50,7 @@
 		<label>Film Rental Duration: <input type="text" name="rentalDuration" placeholder="Enter rental duration"/></label><br />
 		<label>Film Rental Rate: <input type="text" name="rentalRate" placeholder="Example: 5.99" /></label><br />
 		<label>Film Length: <input type="text" name="length" placeholder="Length of film in minutes"/></label><br />
-		<label>Film Replacement Cost: <input type="text" name="replacementCost" placeholder="Cost to replace movie" /></label><br />
+		<label>Cost To Replace Film: <input type="text" name="replacementCost" placeholder="Cost to replace movie" /></label><br />
 		<label>Film Rating: <input type="text" name="rating" placeholder="Example input: G,PG,PG13,R"/></label><br />
 		<label >Film Special Features: <input type="text" name="specialFeatures" placeholder="Trailers,Commentaries,Deleted Scenes,Behind the Scenes" /></label><br />
 		<input type="submit" value="Add New Film" />

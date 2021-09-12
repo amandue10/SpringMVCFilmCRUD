@@ -48,11 +48,11 @@
 		<label>Film Title:  <input type="text" name="title" value="${filmById.title}" /></label><br />
 		<label>Film Description: <input type="text" name="description" value="${filmById.description}" /></label><br />
 		<label>Film Release Year: <input type="text" name="releaseYear" value="${filmById.releaseYear}" /></label><br />
-		<label>Film Language Id: <input type="text" name="languageId" value="${filmById.languageId}" /></label><br />
+		<label>Film Language ID: <input type="text" name="languageId" value="${filmById.languageId}" /></label><br />
 		<label>Film Rental Duration: <input type="text" name="rentalDuration" value="${filmById.rentalDuration}" /></label><br />
 		<label>Film Rental Rate: <input type="text" name="rentalRate" value="${filmById.rentalRate}" /></label><br />
 		<label>Film Length: <input type="text" name="length" value="${filmById.length}" /></label><br />
-		<label>Film Replacement Cost: <input type="text" name="replacementCost" value="${filmById.replacementCost}" /></label><br />
+		<label>Cost To Replace Film: <input type="text" name="replacementCost" value="${filmById.replacementCost}" /></label><br />
 		<label>Film Rating: <input type="text" name="rating" value="${filmById.rating}" /></label><br />
 		<label>Film Special Features <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
 		<input type="submit" value="Edit This Film" />
