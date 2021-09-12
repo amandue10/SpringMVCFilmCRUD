@@ -3,8 +3,8 @@
   <display-name>MVCFilmSite</display-name> 
   <welcome-file-list>
     <welcome-file>home.do</welcome-file>
-  </welcome-file-list>
-  
+  </welcome-file-list> 
+   
   <!-- The front controller of this Spring Web application, responsible for handling all application requests -->
 	<servlet>
 		<servlet-name>springDispatcherServlet</servlet-name>

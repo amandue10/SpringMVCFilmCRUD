@@ -11,6 +11,13 @@ public interface FilmDAO {
 	
 	List<Actor> findActorsByFilmId(int filmId);
 	
-	void addNewFilm(Film film);
+	boolean addNewFilm(Film film);
 	
+	boolean deleteFilm(int filmId);
+	
+	boolean editFilm(Film film);
+	
+	List<Film> findFilmsByKeyword(String titleKeyword, String decKeyword);
+	
+	String findFilmCategory(int filmId);
 }

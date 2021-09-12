@@ -1,10 +1,10 @@
 package com.skilldistillery.film.entities;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
 public class Film {
-
 	private int id;
 	private String title;
 	private String description;
@@ -22,8 +22,7 @@ public class Film {
 		super();
 	}
 	public Film(int id, String title, String description, int releaseYear, int languageId, int rentalDuration,
-			double rentalRate, int length, double replacementCost, String rating, String specialFeatures,
-			List<Actor> cast) {
+			double rentalRate, int length, double replacementCost, String rating, String specialFeatures) {
 		super();
 		this.id = id;
 		this.title = title;
@@ -36,15 +35,6 @@ public class Film {
 		this.replacementCost = replacementCost;
 		this.rating = rating;
 		this.specialFeatures = specialFeatures;
-		this.cast = cast;
-	}
-
-	public List<Actor> getCast() {
-		return cast;
-	}
-
-	public void setCast(List<Actor> cast) {
-		this.cast = cast;
 	}
 
 	public int getId() {
@@ -135,6 +125,15 @@ public class Film {
 		this.specialFeatures = specialFeatures;
 	}
 
+	public List<Actor> getCast() {
+		List<Actor> copy = new ArrayList<>(cast);
+		return copy;
+	}
+
+	public void setCast(List<Actor> cast) {
+		this.cast = cast;
+	}
+	
 	@Override
 	public int hashCode() {
 		return Objects.hash(description, id, languageId, length, rating, releaseYear, rentalDuration, rentalRate,
@@ -163,7 +162,7 @@ public class Film {
 		return "Film [id=" + id + ", title=" + title + ", description=" + description + ", releaseYear=" + releaseYear
 				+ ", languageId=" + languageId + ", rentalDuration=" + rentalDuration + ", rentalRate=" + rentalRate
 				+ ", length=" + length + ", replacementCost=" + replacementCost + ", rating=" + rating
-				+ ", specialFeatures=" + specialFeatures + ", cast=" + cast + "]";
+				+ ", specialFeatures=" + specialFeatures + "]";
 	}
 
 }

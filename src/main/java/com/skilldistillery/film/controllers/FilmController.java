@@ -1,70 +1,65 @@
 package com.skilldistillery.film.controllers;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-
 import com.skilldistillery.film.dao.FilmDAO;
-import com.skilldistillery.film.dao.FilmDaoJdbcImpl;
 import com.skilldistillery.film.entities.Film;
 
 @Controller
 public class FilmController {
-	private Film filmForDisplay  = null;
-	
 	@Autowired
 	private FilmDAO filmDao;
 	
-	
-	public void setFilmDAO(FilmDaoJdbcImpl filmdao) {
-		this.filmDao= filmdao;
-	}
-
-	@RequestMapping(path = "home.do", method = RequestMethod.GET)
-	public ModelAndView index() {
-		ModelAndView mv = new ModelAndView();
-		mv.setViewName("WEB-INF/home.jsp");
-		
-		return mv;
-		
+	@RequestMapping(path = { "/", "home.do" })
+	public String home() {
+		return "WEB-INF/home.jsp";
 	}
 	
-	@RequestMapping(path = "findFilmById.do", method = RequestMethod.GET, params = "id")
-	public ModelAndView findFilmByID(@RequestParam("id") String filmId) {
+	@RequestMapping(path="findById.do", method=RequestMethod.GET)
+	public ModelAndView findById(@RequestParam("filmId") int filmId) {
 		ModelAndView mv = new ModelAndView();
-
-		Pattern p = Pattern.compile("^[0-9]");
-		Matcher m = p.matcher(filmId);
-
-		if (m.find()) {
-
-			int id = Integer.parseInt(filmId);
-
-			if (id != 0) {
-				Film film = filmDao.findById(id);
-
-				if (film != null) {
-					
-					filmForDisplay= film;
-					
-					mv.addObject("film", film);
-					mv.setViewName("WEB-INF/result.jsp");
-				}
-
-				else {
-					mv.addObject("noFilm", "Invalid Film, try Again!");
-					mv.setViewName("WEB-INF/filmByID.jsp");
-				}
-			}
-
-		}
+		Film film = filmDao.findById(filmId);
+		String category = filmDao.findFilmCategory(filmId);
+		mv.addObject("filmById", film);
+		mv.addObject("category", category);
+		mv.setViewName("WEB-INF/findById.jsp");
 		return mv;
-	}	
+	}
+	
+	@RequestMapping(path="addNewFilm.do", method=RequestMethod.GET)
+	public ModelAndView addNewFilm(Film film) {
+		ModelAndView mv = new ModelAndView();
+		boolean isAdded = filmDao.addNewFilm(film);
+		mv.addObject("isAdded", isAdded);
+		mv.setViewName("WEB-INF/addNewFilm.jsp");
+		return mv;
+	}
+	
+	@RequestMapping(path="deleteFilm.do", method=RequestMethod.GET)
+	public String deleteFilm(Model model, int id) {
+		boolean isDeleted = filmDao.deleteFilm(id);
+		model.addAttribute("isDeleted", isDeleted);
+		return "WEB-INF/deleteFilm.jsp";
+	}
+	
+	@RequestMapping(path="editFilm.do", method=RequestMethod.GET)
+	public String editFilm(Model model, Film film) {
+		boolean isEdited = filmDao.editFilm(film);
+		model.addAttribute("isEdited", isEdited);
+		return "WEB-INF/editFilm.jsp";
+	}
+	
+	@RequestMapping(path="keyword.do", method=RequestMethod.GET)
+	public String findFilmsByKeyword(Model model, String title, String description) {
+		List<Film> films = filmDao.findFilmsByKeyword(title, description);
+		model.addAttribute("films", films);
+		return "WEB-INF/keywordFilms.jsp";
+	}
 	
 }

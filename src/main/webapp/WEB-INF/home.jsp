@@ -1,51 +1,47 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-    <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<!-- <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> -->
-
+	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!--  <link href="" rel="stylesheet" type="text/css"> -->
-<!-- create and link css page -->
-<nav class="navbar">
-<a href="index.html"><img src="resources/css/logo.png" width="85" height="58" class="d-inline-block align-top" alt=""></a>
-	<span class="navbar-toggle" id="js-navbar-toggle"> <i
-		class="fas fa-bars"></i>
-	</span> <a href="index.html" class="logo"></a>
-	
-<ul class="main-nav" id="js-menu">
-		<li><a href="home.do" class="nav-links">Home</a></li>
-		<!-- <li><a href="filmByID.html" class="nav-links">Film By ID</a></li>
-		<li><a href="addFilmForm.do" class="nav-links">Add Film</a></li>
-		<li><a href="searchFilm.html" class="nav-links">Search Film</a></li> -->
-	</ul> 
-</nav>
-
 <meta charset="UTF-8">
-<title>Find Film by ID</title>
+<title>MVC Film Site</title>
 </head>
+
 <body>
-<div class="filmForm">
-<h1>Find A Film by ID</h1>
-
-<p>Please use the fields below to find a film in our database by ID number.</p>
-
-<form action="findFilmById.do" method="GET">
-	ID:
-	<input class="input" type="number"  min="0" required="required" name="id" placeholder="Enter ID"/> 
-    <input class="submit" type="submit" value="Get Film by ID" />
-</form>
-<%-- <c:choose>
-		<c:when test="${empty nofilm}">
-			<hr>
-			<strong>Oops! We didn't find anything by that ID.</strong>
-		</c:when>
-	</c:choose> --%>
-</div>
+	<h1>Film Menu</h1>
+	<h3>Enter a film ID to see the details:</h3>
+	<form action="findById.do" method="GET">
+		<label>Film ID <input type="text" name="filmId" /></label>
+			<input type="submit" value="Get Film" />
+	</form>
+	
+	<h3>Add a new film:</h3>
+	<form action="addNewFilm.do" method="GET">
+		<label>Film Id <input type="text" name="id" /></label><br />
+		<label>Film title  <input type="text" name="title" /></label><br />
+		<label>Film description <input type="text" name="description" /></label><br />
+		<label>Film releaseYear <input type="text" name="releaseYear" /></label><br />
+		<label>Film languageId <input type="text" name="languageId" /></label><br />
+		<label>Film rentalDuration <input type="text" name="rentalDuration" /></label><br />
+		<label>Film rentalRate <input type="text" name="rentalRate" /></label><br />
+		<label>Film length <input type="text" name="length" /></label><br />
+		<label>Film replacementCost <input type="text" name="replacementCost" /></label><br />
+		<label>Film rating <input type="text" name="rating" /></label><br />
+		<label>Film specialFeatures <input type="text" name="specialFeatures" /></label><br />
+		<input type="submit" value="Add New Film" />
+	</form>
+	
+	<h3>Search films by keyword in title or description: </h3>
+	<form action="keyword.do" method="GET">
+		<label>Film title <input type="text" name="title" /></label><br />
+		<label>Film description <input type="text" name="description" /></label><br />
+		<input type="submit" value="Get Film By Keyword" />
+	</form>
+	
+	
+	
+	
 </body>
 </html>
