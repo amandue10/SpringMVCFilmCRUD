@@ -6,6 +6,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="resources/css/page.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -22,14 +27,17 @@
 	</c:choose>
 	<br />
 	
-	<h3>Delete This Movie</h3>
 	<form action="deleteFilm.do" method="GET">
+	<fieldset>
+	<legend>Delete This Movie</legend>
 		<label>Film ID <input type="text" name="id" value="${filmById.id}" /></label><br />
 		<input type="submit" value="Delete This Film" />
+		</fieldset>
 	</form>
-	
-	<h3>Edit This Movie</h3>
+	<br>
 	<form action="editFilm.do" method="GET">
+	<fieldset>
+	<legend>Edit This Movie</legend>
 		<input type="hidden" name="id" value="${filmById.id}" />
 		<label>Film title  <input type="text" name="title" value="${filmById.title}" /></label><br />
 		<label>Film description <input type="text" name="description" value="${filmById.description}" /></label><br />
@@ -42,8 +50,9 @@
 		<label>Film rating <input type="text" name="rating" value="${filmById.rating}" /></label><br />
 		<label>Film specialFeatures <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
 		<input type="submit" value="Edit This Film" />
+	</fieldset>
 	</form>
-	
+	<br>
 	<p>
 		<a href="home.do"><strong>Return to Film Menu</strong></a>
 	</p>
