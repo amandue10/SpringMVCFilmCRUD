@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h3>film details:</h3>
+	<h3>Film Details:</h3>
 	<c:choose>
 		<c:when test="${empty filmById}">
 			Film Not Found!
@@ -39,16 +39,16 @@
 	<fieldset>
 	<legend>Edit This Movie</legend>
 		<input type="hidden" name="id" value="${filmById.id}" />
-		<label>Film title  <input type="text" name="title" value="${filmById.title}" /></label><br />
-		<label>Film description <input type="text" name="description" value="${filmById.description}" /></label><br />
-		<label>Film releaseYear <input type="text" name="releaseYear" value="${filmById.releaseYear}" /></label><br />
-		<label>Film languageId <input type="text" name="languageId" value="${filmById.languageId}" /></label><br />
-		<label>Film rentalDuration <input type="text" name="rentalDuration" value="${filmById.rentalDuration}" /></label><br />
-		<label>Film rentalRate <input type="text" name="rentalRate" value="${filmById.rentalRate}" /></label><br />
-		<label>Film length <input type="text" name="length" value="${filmById.length}" /></label><br />
-		<label>Film replacementCost <input type="text" name="replacementCost" value="${filmById.replacementCost}" /></label><br />
-		<label>Film rating <input type="text" name="rating" value="${filmById.rating}" /></label><br />
-		<label>Film specialFeatures <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
+		<label>Film Title:  <input type="text" name="title" value="${filmById.title}" /></label><br />
+		<label>Film Description: <input type="text" name="description" value="${filmById.description}" /></label><br />
+		<label>Film Release Year: <input type="text" name="releaseYear" value="${filmById.releaseYear}" /></label><br />
+		<label>Film Language Id: <input type="text" name="languageId" value="${filmById.languageId}" /></label><br />
+		<label>Film Rental Duration: <input type="text" name="rentalDuration" value="${filmById.rentalDuration}" /></label><br />
+		<label>Film Rental Rate: <input type="text" name="rentalRate" value="${filmById.rentalRate}" /></label><br />
+		<label>Film Length: <input type="text" name="length" value="${filmById.length}" /></label><br />
+		<label>Film Replacement Cost: <input type="text" name="replacementCost" value="${filmById.replacementCost}" /></label><br />
+		<label>Film Rating: <input type="text" name="rating" value="${filmById.rating}" /></label><br />
+		<label>Film Special Features <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
 		<input type="submit" value="Edit This Film" />
 	</fieldset>
 	</form>

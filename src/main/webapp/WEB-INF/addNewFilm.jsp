@@ -17,10 +17,10 @@
 	<h3>film details:</h3>
 	<c:choose>
 		<c:when test="${isAdded}">
-			Good job! You added a new film!
+			Good job! New film added!
 		</c:when>
 		<c:otherwise>
-			Sorry, fail to add a new film!
+			Failed to add. Try again!
 		</c:otherwise>
 	</c:choose>
 	<br />

@@ -15,13 +15,13 @@
 </head>
 <body>
 	
-	<h3>film details:</h3>
+	<h3>Film Details:</h3>
 	<c:choose>
 		<c:when test="${isEdited}">
-			Good job! You edited a new film!
+			Good job! Edit successful!
 		</c:when>
 		<c:otherwise>
-			Sorry, fail to edited a new film!
+			Edit failed. Try again!
 		</c:otherwise>
 	</c:choose>
 	<br />

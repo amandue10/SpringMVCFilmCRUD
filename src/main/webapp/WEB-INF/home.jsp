@@ -15,38 +15,51 @@
 </head>
 
 <body>
+	<div class="header">
 	<h1>Film Menu</h1>
+	</div>
+	
+	<div>
+	<p>Welcome to the film site database. You can search the database by entering a film's ID or search by entering keywords. 
+	The details of the film will populate and you will have the option to edit, add, or delete a film from the database.
+	To search by ID. Enter film 
+	</p>
+	</div>
+	<div>
 	<form action="findById.do" method="GET">
 	<fieldset>
-	<legend>Enter a film ID to see the details:</legend>
-		<label>Film ID <input type="text" name="filmId" /></label>
+	<legend>Enter Film by Id to See Film Details:</legend>
+		<label>Film ID: <input type="text" name="filmId" /></label>
 			<input type="submit" value="Get Film" />
 		</fieldset>
+		</div>
 	</form>
 	<br>
-	
+	<div>
 	<form action="addNewFilm.do" method="GET">
 	<fieldset>
-	<legend>Add new film:</legend>
-		<label>Film Id <input type="text" name="id" value="Enter film ID"/></label><br >
-		<label >Film title <input type="text" name="title" value="Enter a film title"/></label><br />
-		<label >Film description <input type="text" name="description" value="Enter description of film" /></label><br />
+	<legend>Add New Film:</legend>
+		<label>Film ID: <input type="text" name="id" placeholder="Enter film ID"/></label><br >
+		<label >Film Title: <input type="text" name="title" placeholder="Enter a film title"/></label><br />
+		<label >Film Description: <input type="text" name="description" placeholder="Enter description of film" /></label><br />
        
-		<label>Film releaseYear <input type="text" name="releaseYear" value="Example: 2004" /></label><br />
-		<label>Film languageId <input type="text" name="languageId" value="Enter 1- 6" /></label><br />
-		<label>Film rentalDuration <input type="text" name="rentalDuration" value="Enter rental duration"/></label><br />
-		<label>Film rentalRate <input type="text" name="rentalRate" value="Example: 5.99" /></label><br />
-		<label>Film length <input type="text" name="length" value="Length of film in minutes"/></label><br />
-		<label>Film replacementCost <input type="text" name="replacementCost" value="Cost to replace movie" /></label><br />
-		<label>Film rating <input type="text" name="rating" value="Example input: G,PG,PG13,R"/></label><br />
-		<label >Film specialFeatures <input type="text" name="specialFeatures" value="Trailers,Commentaries,Deleted Scenes,Behind the Scenes" /></label><br />
+		<label>Film Release Year: <input type="text" name="releaseYear" placeholder="Example: 2004" /></label><br />
+		<label>Film Language Id: <input type="text" name="languageId" placeholder="Enter 1- 6" /></label><br />
+		<label>Film Rental Duration: <input type="text" name="rentalDuration" placeholder="Enter rental duration"/></label><br />
+		<label>Film Rental Rate: <input type="text" name="rentalRate" placeholder="Example: 5.99" /></label><br />
+		<label>Film Length: <input type="text" name="length" placeholder="Length of film in minutes"/></label><br />
+		<label>Film Replacement Cost: <input type="text" name="replacementCost" placeholder="Cost to replace movie" /></label><br />
+		<label>Film Rating: <input type="text" name="rating" placeholder="Example input: G,PG,PG13,R"/></label><br />
+		<label >Film Special Features: <input type="text" name="specialFeatures" placeholder="Trailers,Commentaries,Deleted Scenes,Behind the Scenes" /></label><br />
 		<input type="submit" value="Add New Film" />
 		</fieldset>
+		</div>
 	</form>
-	
+	<br>
+	<div>
 	<form action="keyword.do" class="pure-form" method="GET">
 	  <fieldset>
-	<legend>Search films by keyword in title or description: </legend>
+	<legend>Search Films by Keyword in Title or Description: </legend>
 	  <p>
 		<label>Film title <input type="text" class="pure-input-1-2" name="title" /></label><br />
 		</p>
@@ -55,6 +68,7 @@
 		</p>
 		<input type="submit" class="pure-button pure-input-1-2 pure-button-primary" value="Get Film By Keyword" />
 		</fieldset>
+	</div>
 	</form>
 	
   </body>

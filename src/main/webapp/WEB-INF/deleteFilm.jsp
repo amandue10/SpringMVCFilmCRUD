@@ -15,13 +15,13 @@
 </head>
 <body>
 	
-	<h3>film details:</h3>
+	<h3>Film Details:</h3>
 	<c:choose>
 		<c:when test="${isDeleted}">
-			Good job! You deleted a new film!
+			Good job! Delete successful!
 		</c:when>
 		<c:otherwise>
-			Sorry, fail to delete a new film!
+			Failed to delete. Try again!
 		</c:otherwise>
 	</c:choose>
 	<br />
