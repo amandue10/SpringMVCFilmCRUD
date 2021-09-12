@@ -14,7 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
+	<div>
 	<h3>Film Details:</h3>
 	<c:choose>
 		<c:when test="${isDeleted}">
@@ -24,9 +24,12 @@
 			Failed to delete. Try again!
 		</c:otherwise>
 	</c:choose>
+	</div>
 	<br />
+<div class="footer">
 	<p>
 		<a href="home.do"><strong>Return to Film Menu</strong></a>
 	</p>
+	</div>
 </body>
 </html>

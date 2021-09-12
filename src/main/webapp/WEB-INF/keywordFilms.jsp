@@ -13,8 +13,14 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-	<h3>films by keyword:</h3>
+<br>
+	<p>
+		<a href="home.do"><strong>Return to Film Menu</strong></a>
+	</p>
+	<div class="header">
+	<h3>Keyword Results:</h3>
+	</div>
+	
 	<c:choose>
 		<c:when test="${empty films}">
 			Films Not Found!
@@ -29,9 +35,10 @@
 	</c:choose>
 	<br />
 	
+	<div>
 	<h3>Delete a Movie</h3>
 	<form action="deleteFilm.do" method="GET">
-		<label>Film ID <input type="text" name="id" value="${filmById.id}" /></label><br />
+		<label>Film ID: <input type="text" name="id" value="${filmById.id}" /></label><br />
 		<input type="submit" value="Delete This Film" />
 	</form>
 	
@@ -51,6 +58,15 @@
 		<label>Film Special Features: <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
 		<input type="submit" value="Edit This Film" />
 		</fieldset>
+		</div>
 	</form>
+	
+	<br>
+	<div class="footer">
+	<p>
+		<a href="home.do"><strong>Return to Film Menu</strong></a>
+	</p>
+	</div>
+	
 </body>
 </html>

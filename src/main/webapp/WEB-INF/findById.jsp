@@ -11,10 +11,13 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>Find by ID</title>
 </head>
 <body>
+<div class="header">
 	<h3>Film Details:</h3>
+	</div>
+	
 	<c:choose>
 		<c:when test="${empty filmById}">
 			Film Not Found!
@@ -27,14 +30,17 @@
 	</c:choose>
 	<br />
 	
+	<div>
 	<form action="deleteFilm.do" method="GET">
 	<fieldset>
 	<legend>Delete This Movie</legend>
 		<label>Film ID <input type="text" name="id" value="${filmById.id}" /></label><br />
 		<input type="submit" value="Delete This Film" />
+		</div>
 		</fieldset>
 	</form>
 	<br>
+	<div>
 	<form action="editFilm.do" method="GET">
 	<fieldset>
 	<legend>Edit This Movie</legend>
@@ -50,11 +56,14 @@
 		<label>Film Rating: <input type="text" name="rating" value="${filmById.rating}" /></label><br />
 		<label>Film Special Features <input type="text" name="specialFeatures" value="${filmById.specialFeatures}" /></label><br />
 		<input type="submit" value="Edit This Film" />
+		</div>
 	</fieldset>
 	</form>
 	<br>
+	<div class="footer">
 	<p>
 		<a href="home.do"><strong>Return to Film Menu</strong></a>
 	</p>
+	</div>
 </body>
 </html>

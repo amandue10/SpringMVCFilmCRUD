@@ -14,6 +14,7 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div>
 	<h3>film details:</h3>
 	<c:choose>
 		<c:when test="${isAdded}">
@@ -23,9 +24,12 @@
 			Failed to add. Try again!
 		</c:otherwise>
 	</c:choose>
+	</div>
 	<br />
+	<div class="footer">
 	<p>
 		<a href="home.do"><strong>Return to Film Menu</strong></a>
 	</p>
+	</div>
 </body>
 </html>

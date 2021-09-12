@@ -22,13 +22,13 @@
 	<div>
 	<p>Welcome to the film site database. You can search the database by entering a film's ID or search by entering keywords. 
 	The details of the film will populate and you will have the option to edit, add, or delete a film from the database.
-	To search by ID. Enter film 
 	</p>
 	</div>
 	<div>
 	<form action="findById.do" method="GET">
 	<fieldset>
-	<legend>Enter Film by Id to See Film Details:</legend>
+	<legend>Find Film Details:</legend>
+	<p>To search enter a Film ID</p>
 		<label>Film ID: <input type="text" name="filmId" /></label>
 			<input type="submit" value="Get Film" />
 		</fieldset>
@@ -38,11 +38,12 @@
 	<div>
 	<form action="addNewFilm.do" method="GET">
 	<fieldset>
-	<legend>Add New Film:</legend>
+	<legend>Add Film To Database:</legend>
+	<p>To add a new film to the database, fill out the form.</p>
+	<p>Must add information or will recieve error</p>
 		<label>Film ID: <input type="text" name="id" placeholder="Enter film ID"/></label><br >
 		<label >Film Title: <input type="text" name="title" placeholder="Enter a film title"/></label><br />
 		<label >Film Description: <input type="text" name="description" placeholder="Enter description of film" /></label><br />
-       
 		<label>Film Release Year: <input type="text" name="releaseYear" placeholder="Example: 2004" /></label><br />
 		<label>Film Language Id: <input type="text" name="languageId" placeholder="Enter 1- 6" /></label><br />
 		<label>Film Rental Duration: <input type="text" name="rentalDuration" placeholder="Enter rental duration"/></label><br />
@@ -59,12 +60,13 @@
 	<div>
 	<form action="keyword.do" class="pure-form" method="GET">
 	  <fieldset>
-	<legend>Search Films by Keyword in Title or Description: </legend>
+	<legend>Search Films by Keyword: </legend>
+	<p>Search using keywords from title or film description</p>
 	  <p>
-		<label>Film title <input type="text" class="pure-input-1-2" name="title" /></label><br />
+		<label>Film Title: <input type="text" class="pure-input-1-2" name="title" /></label><br />
 		</p>
 		<p>
-		<label>Film description <input type="text" class="pure-input-1-2" name="description" /></label><br />
+		<label>Film Description: <input type="text" class="pure-input-1-2" name="description" /></label><br />
 		</p>
 		<input type="submit" class="pure-button pure-input-1-2 pure-button-primary" value="Get Film By Keyword" />
 		</fieldset>
