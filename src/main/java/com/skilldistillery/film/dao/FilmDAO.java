@@ -20,4 +20,8 @@ public interface FilmDAO {
 	List<Film> findFilmsByKeyword(String titleKeyword, String decKeyword);
 	
 	String findFilmCategory(int filmId);
+
 }
+
+
+

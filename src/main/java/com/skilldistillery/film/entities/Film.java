@@ -1,4 +1,5 @@
 package com.skilldistillery.film.entities;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
@@ -99,10 +100,12 @@ public class Film {
 	public void setSpecialFeatures(String specialFeatures) {
 		this.specialFeatures = specialFeatures;
 	}
+
 	public List<Actor> getCast() {
 		List<Actor> copy = new ArrayList<>(cast);
 		return copy;
 	}
+
 	public void setCast(List<Actor> cast) {
 		this.cast = cast;
 	}
