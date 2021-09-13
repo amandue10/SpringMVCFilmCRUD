@@ -14,14 +14,16 @@
 <title>Insert title here</title>
 </head>
 <body>
+<div class="header">
+	<h3>Film Details:</h3>
+	</div>
 <div>
-	<h3>film details:</h3>
 	<c:choose>
 		<c:when test="${isAdded}">
-			Good job! New film added!
+			 New film added! 
 		</c:when>
 		<c:otherwise>
-			Failed to add. Try again!
+			Film failed to add. Try again!
 		</c:otherwise>
 	</c:choose>
 	</div>

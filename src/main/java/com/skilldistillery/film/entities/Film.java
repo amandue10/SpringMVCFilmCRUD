@@ -16,6 +16,7 @@ public class Film {
 	private String rating;
 	private String specialFeatures;
 	private List<Actor> cast;
+	
 	public Film() {
 		super();
 	}
@@ -133,9 +134,9 @@ public class Film {
 	}
 	@Override
 	public String toString() {
-		return "Film: ID:" + id + ", Title: " + title + ", Description: " + description + ", Release Year: " + releaseYear
-				+ ", Language Id: " + languageId + ", Rental Duration: " + rentalDuration + ", Rental Rate: " + rentalRate
-				+ ", Length of film: " + length + ", Cost to replace film " + replacementCost + ", Rating: " + rating
-				+ ", Special Features: " + specialFeatures + "";
+		return "Film ID: " + id + "| Title: " + title + "| Description: " + description + "| Release Year: " + releaseYear
+				+ "| Language Id: " + languageId + "| Rental Duration: " + rentalDuration + "| Rental Rate: " + rentalRate
+				+ "| Length of film: " + length + "| Cost to replace film " + replacementCost + "| Rating: " + rating
+				+ "| Special Features: " + specialFeatures + "      ";
 	}
 }

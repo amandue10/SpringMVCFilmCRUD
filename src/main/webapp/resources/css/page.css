@@ -3,6 +3,13 @@
 
 body {
   margin: 0;
+  background-color: #f1f1f1;
+}
+
+h3{
+background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;	
 }
 
 .header {
@@ -17,14 +24,14 @@ body {
   text-align: center;
 }
 
-legend {
+/* legend {
 	 background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
   display: block;
   border-bottom: 1px solid red;
   margin-bottom: 50px;
-}
+} */
 
 input[type=text], select {
   width: 100%;
@@ -58,11 +65,13 @@ div {
   background-color: #f2f2f2;
   padding: 20px;
 text-align : center;
+
 }
+
+
 
 fieldset {
     position: relative;
-    font-family: verdana, arial, helvetica, sans-serif;
     font-size: 120.01%;
  color:black;
     margin:0 auto
