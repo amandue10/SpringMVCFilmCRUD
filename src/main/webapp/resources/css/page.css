@@ -18,7 +18,7 @@ body {
 }
 
 legend {
-	 background-color: #f1f1f1;
+  background-color: #f1f1f1;
   padding: 20px;
   text-align: center;
   display: block;
@@ -57,14 +57,14 @@ div {
   border-radius: 5px;
   background-color: #f2f2f2;
   padding: 20px;
-text-align : center;
+  text-align : center;
 }
 
 fieldset {
     position: relative;
     font-family: verdana, arial, helvetica, sans-serif;
     font-size: 120.01%;
- color:black;
+ 	color:black;
     margin:0 auto
 }
 
