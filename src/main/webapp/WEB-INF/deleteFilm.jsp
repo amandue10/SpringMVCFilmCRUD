@@ -15,7 +15,7 @@
 </head>
 <body>
 	<div>
-	<h3>Film Details:</h3>
+	<h3>Delete Status</h3>
 	<c:choose>
 		<c:when test="${isDeleted}">
 			Good job! Delete successful!

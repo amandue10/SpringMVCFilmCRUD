@@ -14,11 +14,13 @@
 <title>Insert title here</title>
 </head>
 <body>
+	<div class="header">
+	<h3>Edit Details</h3>
+	</div>
 	<div>
-	<h3>Film Details:</h3>
 	<c:choose>
 		<c:when test="${isEdited}">
-			Good job! Edit successful!
+			Edit successful!
 		</c:when>
 		<c:otherwise>
 			Edit failed. Try again!

@@ -10,41 +10,52 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<title>Insert title here</title>
+<title>Keyword Results</title>
 </head>
 <body>
-<br>
-	<p>
-		<a href="home.do"><strong>Return to Film Menu</strong></a>
-	</p>
 	<div class="header">
-	<h3>Keyword Results:</h3>
+	<h3>Keyword Results</h3>
 	</div>
+	<div>
 	
+	<div>
 	<c:choose>
 		<c:when test="${empty films}">
-			Films Not Found!
+			Film(s) Not Found!
 		</c:when>
 		<c:otherwise>
 			<ul>
-				<c:forEach var="f" items="${films}">
-					${f}
-				</c:forEach>
+				<c:forEach var="f" items="${films}"><br/>
+					${f} </br>
+				</c:forEach> 
+				
 			</ul>
 		</c:otherwise>
 	</c:choose>
+	</div>
+	<p>
+		<a href="home.do"><strong>Return to Film Menu</strong></a>
+	</p>
+	</div>
 	<br />
 	
 	<div>
-	<h3>Delete a Movie</h3>
+	<fieldset>
+	<legend><h3>Delete Film</h3></legend>
+	<p>To delete a film, enter the Film ID Number</p>
 	<form action="deleteFilm.do" method="GET">
 		<label>Film ID: <input type="text" name="id" value="${filmById.id}" /></label><br />
 		<input type="submit" value="Delete This Film" />
+		</fieldset>
+	</div>
 	</form>
-	
+	<br>
+	<div>
 	<form action="editFilm.do" method="GET">
 	<fieldset>
-	<legend>Edit a Movie</legend>
+	<legend><h3>Edit Film</h3></legend>
+		<p>To edit a film, fill out boxes below and submit</p>
+	
 		<label>Film Id: <input type="text" name="id" value="${filmById.id}" /></label><br />
 		<label>Film Title:  <input type="text" name="title" value="${filmById.title}" /></label><br />
 		<label>Film Description: <input type="text" name="description" value="${filmById.description}" /></label><br />

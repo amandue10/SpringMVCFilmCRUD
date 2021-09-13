@@ -3,6 +3,13 @@
 
 body {
   margin: 0;
+  background-color: #f1f1f1;
+}
+
+h3{
+background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;	
 }
 
 .header {
@@ -62,7 +69,6 @@ div {
 
 fieldset {
     position: relative;
-    font-family: verdana, arial, helvetica, sans-serif;
     font-size: 120.01%;
  	color:black;
     margin:0 auto
